@@ -5,19 +5,11 @@ with open("C:/Users/Asus/OneDrive/Documents/ML/1 and 2/enjoysport (1).csv", 'r')
     for row in csv.reader(csvfile):
         a.append(row)
     print(a)
-
-
 print("\nThe total number of training instances are : ",len(a))
-
-
 num_attribute = len(a[0])-1
-
-
 print("\nThe initial hypothesis is : ")
 hypothesis = ['0']*num_attribute
 print(hypothesis)
-
-
 for i in range(0, len(a)):
     if a[i][num_attribute] == 'yes':
         print ("\nInstance ", i+1, "is", a[i], " and is Positive Instance")
@@ -27,11 +19,7 @@ for i in range(0, len(a)):
             else:
                 hypothesis[j] = '?'
         print("The hypothesis for the training instance", i+1, " is: " , hypothesis, "\n")
-
-
     if a[i][num_attribute] == 'no':
         print ("\nInstance ", i+1, "is", a[i], " and is Negative Instance Hence Ignored")
         print("The hypothesis for the training instance", i+1, " is: " , hypothesis, "\n")
-
-
 print("\nThe Maximally specific hypothesis for the training instance is ", hypothesis)
