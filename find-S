@@ -1,0 +1,12 @@
+import pandas as pd
+data = pd.read_csv("dataset.csv")
+hypothesis = ['0'] * (len(data.columns) - 1)
+for i in range(len(data)):
+    if data.iloc[i, -1] == 'Yes':
+        for j in range(len(hypothesis)):
+            if hypothesis[j] == '0' or hypothesis[j] == data.iloc[i, j]:
+                hypothesis[j] = data.iloc[i, j]
+            else:
+                hypothesis[j] = '?'
+
+print("Final hypothesis:", hypothesis)
